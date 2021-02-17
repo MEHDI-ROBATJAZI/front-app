@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Architects+Daughter&display=swap&family=Titillium+Web:wght@700&display=swap&family=Big+Shoulders+Display&display=swap');
+
+html,body{
+  width:100%;
+  padding:0;
+  margin:0;
+}
+
+.section{
+  position: relative;
+  height:99vh;
+}
+
+#welcome_box{
+  position: absolute;
+  top:120px;
+  left:268px;
+}
+.welcome_heading{
+  letter-spacing:4px;
+  font-family:Big Shoulders Display;
+  font-size:6em;
+  line-height:120px;
+}
+.welcome_heading:first-of-type:hover{
+  display: inline;
+  background-color:green;
+}
+.welcome_heading:nth-child(2):hover{
+  display: inline;
+  color:white;
+}
+.welcome_heading:last-of-type:hover{
+  display:inline;
+  background-color: #ff4000;
+}
+
+.welcome_footer{
+  text-indent: 35px;
+  letter-spacing:4px;
+  font-family:Big Shoulders Display;
+  font-size:3em;
+}
+.welcome_footer:hover{
+  background-color: yellow;
+}
+.iconChevronDown{
+  position:absolute;
+  top:600px;
+  right:30px;
+  background-color: rgb(202, 202, 0);
+  border-radius:50%;
+  padding:10px;
+  border:1px dashed blue;
+  animation : welcomeWrapperIconAnimation 1s linear 1s normal forwards  
+}
+@keyframes welcomeWrapperIconAnimation {
+  from { top:600px}
+  to {top:680px}
+}
+
+#skills_container{
+  position: absolute;
+  left:300px;
+  top:120px;
+}
+.section_box{
+  width:770px;
+  padding: 5px;
+  font-family:Big Shoulders Display;
+  font-weight:bold;
+  letter-spacing:1px;
+}
+@keyframes sectionBoxAnimation{
+  0%{letter-spacing:1px}
+  50%{letter-spacing:30px}
+  100%{letter-spacing:1px}
+}
+.section_box:hover{
+  background-color:yellow;
+  animation:sectionBoxAnimation 3s linear alternate forwards;
+}
+#skills_list{
+  font-family:"Architects Daughter";
+  margin-top:30px;
+  font-size:2rem;
+  /* list-style-type: none; */
+  text-indent:20px;
+  line-height: 50px;
+  width:900px;
+  padding:10px;
+  margin-left:0;
+}
+.section{
+  position: relative;
+  height:99vh;
+}
+#personality_container{
+  position: absolute;
+  left:300px;
+  top:120px;
+}
+#personality_heading {
+  margin-bottom:100px;
+}
+/* .header_routes{ */
+  /* line-height: 10px; */
+  /* display:inline-block; */
+/* } */
+.header_routes:hover{
+  text-decoration: underline;
+}
