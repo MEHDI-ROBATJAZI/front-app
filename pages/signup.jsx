@@ -1,23 +1,130 @@
-import React from "react";
+import React,{useState} from "react";
+import Head from 'next/head'
 import Header from "../app/Components/header";
-import Head from "next/head";
-import Signup from '../app/Components/signup_form'
+import InputUserController from '../app/Components/InputUserController'
+import {
+  Box,
+  Container,
+  Input,
+  Heading,
+  Image,
+  SimpleGrid,
+  Stack,
+  Button,
+  InputGroup,
+  RadioGroup,
+  Radio,
+  InputRightElement,
+  Flex 
 
-const SignupPage = ()=>{
+} from "@chakra-ui/react";
+import {AddIcon} from '@chakra-ui/icons'
+import {connect} from 'react-redux'
+import {Form_Action} from '../app/Actions/actions.js'
 
-  const handleSubmit=(value)=>{
-    console.log(value);
-  }
 
-  return(
-    <div>
+
+const Signup = (props) => {
+
+
+  const [show, setShow] =useState(false)
+  const handleClick = () => setShow(!show)
+
+
+  return (
+    <Box fontFamily="Titillium Web" bg="gray.100" h="100vh">
       <Head>
-        <title>register page</title>
+        <title>Signup Page</title>
       </Head>
       <Header />
-      <Signup onSubmit={handleSubmit} />
-    </div>
-  )
+
+      <Container
+        bgGradient="linear(to-l, #af5eff, #ff57ab)"
+        maxW="960px"
+        mt={"60px"}
+        height="480px"
+        border={"1px solid yellow"}
+      >
+        <Heading textAlign="center" mt={5} fontFamily="Dancing Script">
+          Register Page
+        </Heading>
+        <SimpleGrid columns={2} spacing={1}>
+          <Image src="/signup-undraw.svg" boxSize="350px" alt="signup/undraw" />
+          <Stack spacing={3} mt={"120px"}>
+            
+            <Flex>
+             <Input variant="flushed" name="name" placeholder="name" onChange={(e)=>props.ChangeInput(e)} />  
+             <Input variant="flushed" name="family" placeholder="family" onChange={(e)=>props.ChangeInput(e)} />  
+            </Flex>
+
+            <Input
+              style={{ textIndent: "8px", letterSpacing: "2px" }}
+              size="md"
+              mb={5}
+              placeholder="email"
+              name="email"
+              focusBorderColor="blue.300"
+              onChange={(e)=>props.ChangeInput(e)}
+            />
+
+
+
+            <InputGroup size="md">
+              <Input
+                pr="4.5rem"
+                type={show ? "text" : "password"}
+                placeholder="Enter password"
+                name="password"
+                onChange={(e)=>props.ChangeInput(e)}
+              />
+              <InputRightElement width="4.5rem">
+                <Button h="1.75rem" size="sm" onClick={handleClick}>
+                  {show ? "Hide" : "Show"}
+                </Button>
+              </InputRightElement>
+            </InputGroup>
+
+
+            <RadioGroup defaultValue="2">
+              <Stack spacing={5} direction="row">
+                <Radio colorScheme="red" value="male" name="gender" onChange={(e)=>props.ChangeInput(e)}>
+                  male
+                </Radio>
+                <Radio colorScheme="green" value="female" name="gender" onChange={(e)=>props.ChangeInput(e)}>
+                  female
+                </Radio>
+              </Stack>
+            </RadioGroup>
+
+
+
+            <Button
+              size="lg"
+              colorScheme={"yellow"}
+              leftIcon={<AddIcon w={4} />}
+            >
+              Signup now
+            </Button>
+          </Stack>
+        </SimpleGrid>
+      </Container>
+      <InputUserController />
+    </Box>
+  );
+};
+
+
+
+
+const mapDispatchToProps = dispatch => {
+  return {
+    ChangeInput:(event)=>{
+      let tagname = event.target.name
+      let value = event.target.value;
+      const form_name="signup"
+      dispatch(Form_Action(form_name,tagname,value))
+    }
+  }
 }
 
-export default SignupPage
+export default connect(null , mapDispatchToProps)(Signup);
