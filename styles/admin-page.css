@@ -1,0 +1,43 @@
+.admin-controller{
+	width:300px;
+	box-shadow:0px 2px 4px 0px gray;
+	margin:30px;
+	height:300px;
+}
+.progress-box{
+	margin-top:10px;
+	padding:10px;
+	border:1px dotted #e1e1e1;
+}
+.heading-box{
+	background-color:#e1e1e1;
+	height:80px;
+}
+#head-box{
+	text-align:center;
+	line-height:80px;
+	font-size:2rem;
+    font-family:Big Shoulders Display;
+    letter-spacing:2px;
+} 
+.body-box{
+	padding:10px;
+	border:1px solid gray;
+	margin:10px;
+}
+
+
+.user-name{
+	font-family:"Architects Daughter";
+	letter-spacing:1px;
+}
+
+.show-email{
+	text-indent:10px;
+	color:gray;
+	font-size:.8rem;
+}
+.users-information-box:hover{
+	cursor:pointer;
+	background-color:#e1e1e1;
+}

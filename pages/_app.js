@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import { useStore } from '../store'
 import {RtlProvider} from '../RTLprovider'
 import "../styles/index.css"
+import "../styles/admin-page.css"
 
 
 export default function App({ Component, pageProps }) {

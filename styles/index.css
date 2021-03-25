@@ -13,8 +13,11 @@ html,body{
 
 #welcome_box{
   position: absolute;
-  top:120px;
-  left:268px;
+  top:80px;
+  left:200px;
+}
+.welcome_heading::selection{
+  background-color: yellow;
 }
 .welcome_heading{
   letter-spacing:4px;
@@ -35,11 +38,15 @@ html,body{
   background-color: #ff4000;
 }
 
+
+.welcome_footer::selection{
+  background-color: red;
+}
 .welcome_footer{
-  text-indent: 35px;
+  text-indent: 55px;
   letter-spacing:4px;
   font-family:Big Shoulders Display;
-  font-size:3em;
+  font-size:2.8em;
 }
 .welcome_footer:hover{
   background-color: yellow;
@@ -82,7 +89,7 @@ html,body{
 }
 #skills_list{
   font-family:"Architects Daughter";
-  margin-top:30px;
+  margin-top:20px;
   font-size:2rem;
   /* list-style-type: none; */
   text-indent:20px;
