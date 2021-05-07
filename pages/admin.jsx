@@ -4,7 +4,7 @@ import {Box,Heading} from '@chakra-ui/react'
 import {useSelector} from 'react-redux'
 import axios from 'axios'
 import AdminPage from '../app/Components/admin/adminPage'
-
+import Header from "../app/Components/header"
 
 const Admin = () => {
 
@@ -18,6 +18,7 @@ const Admin = () => {
   const isAdmin = useSelector(state => state.isAdmin)
   return (
     <Box>
+      <Header />
       {
         isAdmin === false ?(<CheckAdmin />):(
           <AdminPage />

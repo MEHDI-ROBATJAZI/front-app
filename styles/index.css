@@ -4,10 +4,28 @@ html,body{
   width:100%;
   padding:0;
   margin:0;
+  box-sizing:border-box;
+}
+input::-webkit-input-placeholder { /* Edge */
+  color: brown;
+  letter-spacing:1px;
 }
 
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: brown;
+  letter-spacing:1px;
+}
+
+input::placeholder {
+  color: brown;
+  letter-spacing:1px;
+}
+input{
+  letter-spacing:1px;
+}
 .section{
-  position: relative;
+  width:100%;
+  /* position: relative; */
   height:99vh;
 }
 
@@ -16,13 +34,15 @@ html,body{
   top:80px;
   left:200px;
 }
+#welcome_box:hover{
+  cursor:pointer
+}
 .welcome_heading::selection{
   background-color: yellow;
 }
 .welcome_heading{
   letter-spacing:4px;
   font-family:Big Shoulders Display;
-  font-size:6em;
   line-height:120px;
 }
 .welcome_heading:first-of-type:hover{
@@ -46,33 +66,33 @@ html,body{
   text-indent: 55px;
   letter-spacing:4px;
   font-family:Big Shoulders Display;
-  font-size:2.8em;
+  /*font-size:2.8em;*/
 }
 .welcome_footer:hover{
   background-color: yellow;
 }
 .iconChevronDown{
   position:absolute;
-  top:600px;
+  bottom:60px;
   right:30px;
   background-color: rgb(202, 202, 0);
   border-radius:50%;
   padding:10px;
   border:1px dashed blue;
-  animation : welcomeWrapperIconAnimation 1s linear 1s normal forwards  
+  /* animation : welcomeWrapperIconAnimation 1s linear 1s normal forwards   */
 }
-@keyframes welcomeWrapperIconAnimation {
+/* @keyframes welcomeWrapperIconAnimation {
   from { top:600px}
   to {top:680px}
-}
-
+} */
+/* 
 #skills_container{
   position: absolute;
   left:300px;
   top:120px;
-}
+} */
 .section_box{
-  width:770px;
+  /* width:770px; */
   padding: 5px;
   font-family:Big Shoulders Display;
   font-weight:bold;
@@ -89,31 +109,57 @@ html,body{
 }
 #skills_list{
   font-family:"Architects Daughter";
-  margin-top:20px;
-  font-size:2rem;
+  /* margin-top:20px; */
+  /* font-size:2rem; */
   /* list-style-type: none; */
   text-indent:20px;
-  line-height: 50px;
-  width:900px;
+  /* line-height: 50px; */
+  /* width:900px; */
   padding:10px;
-  margin-left:0;
+  /* margin-left:0; */
 }
 .section{
   position: relative;
   height:99vh;
 }
-#personality_container{
+/* #personality_container{
   position: absolute;
   left:300px;
   top:120px;
-}
+} */
 #personality_heading {
   margin-bottom:100px;
 }
-/* .header_routes{ */
-  /* line-height: 10px; */
-  /* display:inline-block; */
-/* } */
 .header_routes:hover{
   text-decoration: underline;
+}
+.header-svg{
+  position:absolute;
+  top:0;
+  
+}
+
+@media only screen and (max-width: 768px){
+  #welcome_box{
+    left:100px;
+  }
+}
+
+@media only screen and (max-width: 400px){
+  .section{
+    height:70vh
+  }
+  #welcome_box{
+    top:80px;
+    left:20px;
+    text-align:center;
+  }
+  .welcome_heading{
+    line-height:80px;
+    letter-spacing:2px;
+  }
+  .welcome_footer{
+    text-align:center;
+    text-indent:10px;
+  }
 }

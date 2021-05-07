@@ -19,8 +19,19 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <Box fontFamily="Titillium Web" >
-      <Flex bg="teal" w={"100%"} h={45} p="0 200px 0 200px">
+    <Box 
+      bg="teal"
+      fontFamily="Titillium Web"
+      w="100%"
+     >
+      <Flex
+        h={45} 
+        p={{base:"0 50px 0 50px",
+            md:"0 100px 0 100px",
+            lg:"0 200px 0 200px"}}
+
+        >
+
         <Heading
           size={"md"}
           pt={4}
@@ -33,27 +44,29 @@ const Header = () => {
 
         <Spacer />
 
-        <Text color="orange" mr={"20px"} mt={"11px"} className="header_routes" >
-          <Link href="/">Home</Link>
-        </Text>
 
 
-        <Menu>
-          <MenuButton color="orange"  m={"20px"} className="header_routes">
-            profile
-          </MenuButton>
-          <MenuList>
-            <MenuItem>
-              <Link href="/profile">Profile</Link> <Spacer /> <AiFillProfile />
-            </MenuItem>
-            <MenuItem>
-              <Link href="/signup">SignUp</Link> <Spacer /> <TiUserAdd /> 
-            </MenuItem>
-            <MenuItem>
-              <Link href="/login">Login</Link> <Spacer /> <RiLoginCircleFill />
-            </MenuItem>
-          </MenuList>
-        </Menu>
+          <Text color="orange" mr={"20px"} mt={"11px"} className="header_routes" >
+            <Link href="/">Home</Link>
+          </Text>
+
+
+          <Menu>
+            <MenuButton color="orange"  m={"20px"} className="header_routes">
+              profile
+            </MenuButton>
+            <MenuList>
+              <MenuItem>
+                <Link href="/profile">Profile</Link> <Spacer /> <AiFillProfile />
+              </MenuItem>
+              <MenuItem>
+                <Link href="/signup">SignUp</Link> <Spacer /> <TiUserAdd /> 
+              </MenuItem>
+              <MenuItem>
+                <Link href="/login">Login</Link> <Spacer /> <RiLoginCircleFill />
+              </MenuItem>
+            </MenuList>
+          </Menu>
       </Flex>
     </Box>
   );

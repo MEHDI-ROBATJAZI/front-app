@@ -20,16 +20,19 @@ import {
 } from "@chakra-ui/react";
 import {AddIcon} from '@chakra-ui/icons'
 import {connect} from 'react-redux'
-import {Form_Action} from '../app/Actions/actions.js'
-
-
+import {Change_Input_Data} from '../app/Actions/actions.js'
+import {useSelector} from "react-redux"
+import axios from 'axios'
 
 const Signup = (props) => {
 
-
   const [show, setShow] =useState(false)
   const handleClick = () => setShow(!show)
+  const formData = useSelector(state=> state.form_data)
 
+  const SUBMIT = async()=>{
+    const resp = await axios.post("http://localhost:5000/signup",formData)
+  }
 
   return (
     <Box fontFamily="Titillium Web" bg="gray.100" h="100vh">
@@ -50,7 +53,7 @@ const Signup = (props) => {
         </Heading>
         <SimpleGrid columns={2} spacing={1}>
           <Image src="/signup-undraw.svg" boxSize="350px" alt="signup/undraw" />
-          <Stack spacing={3} mt={"120px"}>
+          <Stack spacing={3} mt={"60px"}>
             
             <Flex>
              <Input variant="flushed" name="name" placeholder="name" onChange={(e)=>props.ChangeInput(e)} />  
@@ -76,7 +79,8 @@ const Signup = (props) => {
                 placeholder="Enter password"
                 name="password"
                 onChange={(e)=>props.ChangeInput(e)}
-              />
+
+              />  
               <InputRightElement width="4.5rem">
                 <Button h="1.75rem" size="sm" onClick={handleClick}>
                   {show ? "Hide" : "Show"}
@@ -102,6 +106,7 @@ const Signup = (props) => {
               size="lg"
               colorScheme={"yellow"}
               leftIcon={<AddIcon w={4} />}
+              onClick={SUBMIT}
             >
               Signup now
             </Button>
@@ -122,8 +127,8 @@ const mapDispatchToProps = dispatch => {
       let tagname = event.target.name
       let value = event.target.value;
       const form_name="signup"
-      dispatch(Form_Action(form_name,tagname,value))
-    }
+      dispatch(Change_Input_Data(form_name,tagname,value))
+    },
   }
 }
 

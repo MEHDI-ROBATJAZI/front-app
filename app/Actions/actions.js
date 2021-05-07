@@ -1,4 +1,4 @@
-export const Form_Action=(formname,tagname,data)=>{
+export const Change_Input_Data=(formname,tagname,data)=>{
 	return {
 		type:"CHANGE_INPUT",
 		payload:{
@@ -6,6 +6,8 @@ export const Form_Action=(formname,tagname,data)=>{
 		}
 	}
 }
+
+
 
 export const CheckAdminAction=(isAdmin)=>{
 	return {

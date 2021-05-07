@@ -47,7 +47,7 @@ const CheckAdmin = () => {
   
   const show_error_message = ()=>{
     // wrong code
-    alert_message.current.innerText = "you'r password is wrong please set another password";
+    alert_message.current.textContent = "you'r password is wrong please set another password";
     alert_message.current.style.backgroundColor = "red";
     alert_message.current.style.color = "white";
     alert_message.current.style.fontWeight = "bold";

@@ -9,6 +9,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import Image from "next/image";
+import Head from "next/head";
 import { EditIcon } from "@chakra-ui/icons";
 
 export default function Profile() {
@@ -19,7 +20,7 @@ export default function Profile() {
     gender: "",
   });
 
-  const baseURL = "http://localhost:5000/";
+  const baseURL = "http://localhost:5000/profile";
   const getData = () => {
     fetch(baseURL)
       .then((res) => res.json())
@@ -37,15 +38,17 @@ export default function Profile() {
 
   return (
     <Box>
+      <Head>
+        <title>Profile Page</title>
+      </Head>
       <Header />
-      <Button 
+      <Button
         colorScheme="teal"
         pos="absolute"
         top="78px"
         right="180px"
         w="960px"
         onClick={getData}
-
       >
         get data
       </Button>
