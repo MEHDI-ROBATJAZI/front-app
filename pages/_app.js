@@ -5,7 +5,7 @@ import { useStore } from '../store'
 import {RtlProvider} from '../RTLprovider'
 import "../styles/index.css"
 import "../styles/admin-page.css"
-
+// import "../public/fonts/B_Nazanin.ttf"
 
 // 2. Update the breakpoints as key-value pairs
 const breakpoints = createBreakpoints({
@@ -20,7 +20,8 @@ const theme = extendTheme({createBreakpoints})
 
 export default function App({ Component, pageProps }) {
   const store = useStore(pageProps.initialReduxState)
-
+  
+  
   return (
     <Provider store={store}>
       <ChakraProvider theme = {theme} >

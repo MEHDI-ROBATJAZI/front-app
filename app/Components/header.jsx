@@ -53,7 +53,7 @@ const Header = () => {
 
           <Menu>
             <MenuButton color="orange"  m={"20px"} className="header_routes">
-              profile
+              Profile
             </MenuButton>
             <MenuList>
               <MenuItem>

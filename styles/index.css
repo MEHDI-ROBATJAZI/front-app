@@ -1,10 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Architects+Daughter&display=swap&family=Titillium+Web:wght@700&display=swap&family=Big+Shoulders+Display&display=swap');
 
+/* @font-face {
+  font-family: 'B_Nazanin.ttf';
+  src: local('B_Nazanin'), url("/fonts/B_Nazanin.ttf") format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+ */
+
 html,body{
   width:100%;
   padding:0;
   margin:0;
   box-sizing:border-box;
+}
+body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: blue;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid rgb(44, 228, 84);  /* creates padding around scroll thumb */
 }
 input::-webkit-input-placeholder { /* Edge */
   color: brown;
@@ -48,6 +70,7 @@ input{
 .welcome_heading:first-of-type:hover{
   display: inline;
   background-color:green;
+  color:yellow
 }
 .welcome_heading:nth-child(2):hover{
   display: inline;
@@ -122,11 +145,9 @@ input{
   position: relative;
   height:99vh;
 }
-/* #personality_container{
-  position: absolute;
-  left:300px;
-  top:120px;
-} */
+#personality_container{
+  z-index:1000;
+}
 #personality_heading {
   margin-bottom:100px;
 }
@@ -137,6 +158,23 @@ input{
   position:absolute;
   top:0;
   
+}
+
+.footerImage{
+  z-index:1000;
+}
+#wave{
+  position:absolute;
+  bottom:0;
+  left:0;
+  z-index:100;
+}
+#blob{
+  position: absolute;
+  top:140px;
+  right:35%;
+  width:500px;
+  z-index:100;
 }
 
 @media only screen and (max-width: 768px){
@@ -161,5 +199,12 @@ input{
   .welcome_footer{
     text-align:center;
     text-indent:10px;
+  }
+  #blob{
+    /* position: absolute; */
+    /* top:140px; */
+    /* right:25%; */
+    width:200px;
+    z-index:100;
   }
 }

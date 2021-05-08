@@ -4,6 +4,7 @@ import {
 	Image,
 	Divider,
 	VStack,
+  HStack,
 }
 from "@chakra-ui/react"
 
@@ -17,79 +18,100 @@ const Footer =()=>{
   const skypeImageElement = useRef(null)
 
   const insta_mouse_over =()=>{
-    instagramImageElement.current.src = "/instagramLogo2.png"
+    instagramImageElement.current.src = "/assets/instagramLogo2.png"
   }
   const insta_mouse_leave =()=>{
-    instagramImageElement.current.src = "/instagramLogo1.png"
+    instagramImageElement.current.src = "/assets/instagramLogo1.png"
   }
   const github_mouse_over =()=>{
-    githubImageElement.current.src = "/githubLogo2.png"
+    githubImageElement.current.src = "/assets/githubLogo2.png"
   }
   const github_mouse_leave =()=>{
-    githubImageElement.current.src = "/githubLogo1.png"
+    githubImageElement.current.src = "/assets/githubLogo1.png"
   }
   const telegram_mouse_over=()=>{
-    telegramImageElement.current.src = "/telegramLogo2.png"
+    telegramImageElement.current.src = "/assets/telegramLogo2.png"
   }
   const telegram_mouse_leave=()=>{
-    telegramImageElement.current.src = "/telegramLogo1.png"
+    telegramImageElement.current.src = "/assets/telegramLogo1.png"
   }
   const skype_mouse_over=()=>{
-    skypeImageElement.current.src="/skypeLogo2.png"
+    skypeImageElement.current.src="/assets/skypeLogo2.png"
   }
   const skype_mouse_leave=()=>{
-    skypeImageElement.current.src="/skypeLogo1.png"
+    skypeImageElement.current.src="/assets/skypeLogo1.png"
   }
 
 	return(
-		<Box>
+		<Box pt={5}>
       <Divider />
       <VStack spacing={"14px"}>
-        <Box>
     			<Image
-            src="/instagramLogo1.png"
+            src="/assets/instagramLogo1.png"
             alt="Picture of the my instagram profile"
             width={40}
             height={40}
             ref={instagramImageElement}
             onMouseOver={insta_mouse_over}
             onMouseLeave={insta_mouse_leave}
-            onClick={()=>window.location.href = "https://www.instagram.com/mahdi._.robatjazi/"}
+            onClick={()=>window.open("https://www.instagram.com/mahdi._.robatjazi/","_blank")}
+            className="footerImage"
           />
-        </Box>
-        <Box>
+          <HStack spacing="20rem">
+            <Image
+              src="/assets/githubLogo1.png"
+              alt="Picture of the my github profile"
+              width={40}
+              height={40}
+              ref={githubImageElement}
+              onMouseOver={github_mouse_over}
+              onMouseLeave={github_mouse_leave}
+              onClick={()=>window.open("https://github.com/MEHDI-ROBATJAZI" , "_blank")}
+              className="footerImage"
+            />
+            <Image
+              src="/assets/telegramLogo1.png"
+              alt="Picture of the my telegram profile"
+              width={40}
+              height={40}
+              ref={telegramImageElement}
+              onMouseOver={telegram_mouse_over}
+              onMouseLeave={telegram_mouse_leave}
+              onClick={()=> alert("Telegram ID : @Mahdi_Robatjazi")}
+              className="footerImage"
+            />
+          </HStack>
           <Image
-            src="/githubLogo1.png"
-            alt="Picture of the my github profile"
-            width={40}
-            height={40}
-            ref={githubImageElement}
-            onMouseOver={github_mouse_over}
-            onMouseLeave={github_mouse_leave}
-            onClick={()=>window.location.href="https://github.com/MEHDI-ROBATJAZI"}
-          />
-          <Image
-            src="/telegramLogo1.png"
-            alt="Picture of the my telegram profile"
-            width={40}
-            height={40}
-            ref={telegramImageElement}
-            onMouseOver={telegram_mouse_over}
-            onMouseLeave={telegram_mouse_leave}
-            onClick={()=> alert("Telegram ID : @Mahdi_Robatjazi")}
-          />
-          <Image
-            src="/skypeLogo1.png"
+            src="/assets/skypeLogo1.png"
             alt="Picture of the my skype profile"
             width={40}
             height={40}
             ref={skypeImageElement}
             onMouseOver={skype_mouse_over}
             onMouseLeave={skype_mouse_leave}
-            onClick={()=>window.location.href="https://join.skype.com/invite/op1fkBia0ShO"}
+            onClick={()=>window.open("https://join.skype.com/invite/op1fkBia0ShO" , "_blank")}
+            className="footerImage"
           />
-        </Box>
       </VStack>
+
+      <Image 
+        src="/assets/top-arrow.webp"
+        alt="go up"
+        width={40}
+        height={40}
+        onClick={()=> window.scrollTo(0,0)}
+        style={
+        {
+          position:"absolute",
+          right:"90px",
+          bottom:"70px",
+          zIndex:"1000",
+        }
+      }
+      />
+      <svg id="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#adadad" fill-opacity="1" d="M0,96L30,85.3C60,75,120,53,180,69.3C240,85,300,139,360,176C420,213,480,235,540,218.7C600,203,660,149,720,133.3C780,117,840,139,900,170.7C960,203,1020,245,1080,234.7C1140,224,1200,160,1260,149.3C1320,139,1380,181,1410,202.7L1440,224L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
+      </svg>
 		</Box>
 	)		
 }

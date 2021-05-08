@@ -15,11 +15,10 @@ import {
   Text,
   Tooltip,
   UnorderedList,
-  Image
+  Image,
 } from "@chakra-ui/react";
-import Footer from "../app/Components/footer"
+import Footer from "../app/Components/footer";
 import { FiChevronsDown } from "react-icons/fi";
-
 
 const Home = () => {
   return (
@@ -32,7 +31,13 @@ const Home = () => {
       <Header />
 
       <Box className="section" bg="#a2ff91" position="relative">
-        {/* <Image src="favicon.ico" width="400px" position="absolute" bottom="0" left="0" /> */}
+        <Image
+          src="/assets/me.png"
+          width="400px"
+          position="absolute"
+          bottom="0"
+          left="0"
+        />
         <Box id="welcome_box">
           <Heading
             className="welcome_heading"
@@ -59,18 +64,18 @@ const Home = () => {
             fontSize={{ base: "1.4em", md: "2.7em", lg: "3em" }}
             className="welcome_footer"
           >
-            JavaScript✌🏽️
+            JavaScript✌🏽️ / React
           </Text>
           <Text
             fontSize={{ base: "1.4em", md: "2.7em", lg: "3em" }}
             className="welcome_footer"
           >
-            And nothing more ... 👏
+            is my lovely language ... 👏
           </Text>
         </Box>
         <Box
           className="iconChevronDown"
-          onClick={() => window.scrollTo(0, 600)}
+          onClick={() => window.scrollTo(0, 840)}
         >
           <FiChevronsDown fontSize="42px" />
         </Box>
@@ -143,7 +148,7 @@ const Home = () => {
         </Box>
         <Box
           className="iconChevronDown"
-          onClick={() => window.scrollTo(0,1200)}
+          onClick={() => window.scrollTo(0, 1640)}
         >
           <FiChevronsDown fontSize="42px" />
         </Box>
@@ -162,7 +167,9 @@ const Home = () => {
             </Heading>
           </Tooltip>
 
-          <Accordion /*w={"770px"}*/ allowMultiple>
+        </Box>
+          <Box style={{zIndex:"500"}}>
+          <Accordion  lang="ar" dir="rtl"allowMultiple>
             <AccordionItem>
               <h2>
                 <AccordionButton>
@@ -186,22 +193,33 @@ const Home = () => {
               <>
                 <h2>
                   <AccordionButton>
-                    <Box>Section 2 title</Box>
+                    <Box>اینو با چی درست کردم؟</Box>
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa eveniet libero sapiente vitae, necessitatibus adipisci aperiam distinctio corrupti ullam debitis itaque. Expedita voluptates necessitatibus ex, distinctio repellat debitis quam vero.
                 </AccordionPanel>
               </>
             </AccordionItem>
           </Accordion>
-        </Box>
-        <Box
+          </Box>
+          <svg viewBox="0 0 200 200" id="blob" xmlns="http://www.w3.org/2000/svg">
+            <path
+              fill="#fbaa3e"
+              d="M61.6,-46.8C75,-32.4,77.5,-7.1,71.5,15.1C65.4,37.3,50.9,56.4,33.9,60.9C17,65.4,-2.4,55.3,-18.3,45C-34.3,34.7,-46.7,24.1,-51.9,9.5C-57.2,-5.1,-55.2,-23.8,-45.3,-37.3C-35.5,-50.9,-17.7,-59.4,3.2,-61.9C24.2,-64.5,48.3,-61.1,61.6,-46.8Z"
+              transform="translate(100 100)"
+            />
+          </svg>
+        <Box 
           className="iconChevronDown"
-          onClick={() => window.scrollTo(0, 1850)}
+          onClick={() =>{
+            
+            // window.scrollTo(0, 2220)
+            
+            const mywindow = window.open("","_blank","fullscreen=yes")
+            mywindow.defaultStatus = "my status"
+          }
+          }
         >
           <FiChevronsDown fontSize="42px" />
         </Box>

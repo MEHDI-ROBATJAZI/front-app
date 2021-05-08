@@ -30,14 +30,22 @@ const Signup = (props) => {
   const handleClick = () => setShow(!show)
   const formData = useSelector(state=> state.form_data)
 
+  
+
   const SUBMIT = async()=>{
+
     const resp = await axios.post("http://localhost:5000/signup",formData)
+    if(resp.status == 200){
+      window.location.href = "/"
+    }else if (resp.status === 400){
+      alert(resp.msg)
+    }
   }
 
   return (
     <Box fontFamily="Titillium Web" bg="gray.100" h="100vh">
       <Head>
-        <title>Signup Page</title>
+        <title>Register Page</title>
       </Head>
       <Header />
 
@@ -52,7 +60,7 @@ const Signup = (props) => {
           Register Page
         </Heading>
         <SimpleGrid columns={2} spacing={1}>
-          <Image src="/signup-undraw.svg" boxSize="350px" alt="signup/undraw" />
+          <Image src="/assets/signup-undraw.svg" boxSize="350px" alt="signup/undraw" />
           <Stack spacing={3} mt={"60px"}>
             
             <Flex>
@@ -107,6 +115,7 @@ const Signup = (props) => {
               colorScheme={"yellow"}
               leftIcon={<AddIcon w={4} />}
               onClick={SUBMIT}
+              isDisabled={formData.submit_button_active === true ? false : true}
             >
               Signup now
             </Button>
@@ -132,4 +141,8 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(null , mapDispatchToProps)(Signup);
+const mapStateToProps =(state)=>{
+  return state.submit_button_active
+}
+
+export default connect(mapStateToProps , mapDispatchToProps)(Signup);

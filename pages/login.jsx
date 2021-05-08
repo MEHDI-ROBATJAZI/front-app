@@ -41,7 +41,7 @@ const Signup = () => {
           Login Page
         </Heading>
         <SimpleGrid columns={2} spacing={1}>
-          <Image src="/login-undraw.svg" boxSize="400px" alt="signup/undraw" />
+          <Image src="/assets/login-undraw.svg" boxSize="400px" alt="signup/undraw" />
           <Stack spacing={3} mt={"120px"}>
             <Input
               style={{ textIndent: "8px", letterSpacing: "2px" }}

@@ -16,7 +16,6 @@ import {
   Tab,
   TabPanel,
 } from "@chakra-ui/react";
-import CustomePagination from "../costomePagination";
 import axios from "axios";
 
 
@@ -45,8 +44,6 @@ const UserTable = (props) => {
       </Tbody>
       <Tfoot>
 
-        <CustomePagination limitPage={6} items={44} />
-        
       </Tfoot>
     </Table>
   );

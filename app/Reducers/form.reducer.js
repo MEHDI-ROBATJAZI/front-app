@@ -1,7 +1,7 @@
 import * as types  from '../Actions/types'
 
 
-const initialState ={which_form_active:"",name:"",family:"",email:"",passwd:"",gender:""} 
+const initialState ={which_form_active:"",name:"",family:"",email:"",passwd:"",gender:"",submit_button_active:false} 
 
 
 const form_reducer=(state=initialState ,action)=>{
@@ -28,6 +28,12 @@ const form_reducer=(state=initialState ,action)=>{
 				case "password":
 					state.passwd = data
 					break
+			}
+			
+			if(state.name === "" || state.family === "" || state.email === "" || state.gender===""|| state.passwd===""){
+				state.submit_button_active = false
+			}else{
+				state.submit_button_active = true
 			}
 
 			return state
