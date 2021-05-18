@@ -35,7 +35,7 @@ const UserTable = (props) => {
       </Thead>
       <Tbody>
         {props.data.map((user) => (
-          <Tr>
+          <Tr key={user._id}>
             <Td>{user.name + " " + user.family}</Td>
             <Td>{user.email}</Td>
             <Td>{user.createdAt}</Td>

@@ -10,7 +10,7 @@ const options = {
 }
 
 
-export function RtlProvider({ children }) {
+export default function RtlProvider({ children }) {
   // const { locale } = useRouter()
   // const dir = locale == "ar" ? "rtl" : "ltr"
   const cache = createCache( { key: "css-ar", stylisPlugins: [rtl] })

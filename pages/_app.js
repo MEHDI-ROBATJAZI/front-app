@@ -2,9 +2,10 @@ import {ChakraProvider,extendTheme} from '@chakra-ui/react'
 import { createBreakpoints } from "@chakra-ui/theme-tools"
 import { Provider } from 'react-redux'
 import { useStore } from '../store'
-import {RtlProvider} from '../RTLprovider'
 import "../styles/index.css"
 import "../styles/admin-page.css"
+import "../styles/sliderStyle.css"
+
 // import "../public/fonts/B_Nazanin.ttf"
 
 // 2. Update the breakpoints as key-value pairs
@@ -25,9 +26,8 @@ export default function App({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <ChakraProvider theme = {theme} >
-        <RtlProvider>
-          <Component {...pageProps} />
-        </RtlProvider>
+        
+        <Component {...pageProps} />
       </ChakraProvider>
     </Provider>
   )

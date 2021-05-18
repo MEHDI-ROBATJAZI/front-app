@@ -37,7 +37,7 @@ const CheckAdmin = () => {
         data = {Admin_Code:localCode}
       }
       let resp = await axios.post("http://localhost:5000/admin/check-password",data)
-   
+
       return resp.data.result
     }catch(err){
       console.error(err)
@@ -59,7 +59,6 @@ const CheckAdmin = () => {
   const setAdminCode = async() => {
     // change store redux : isAdmin
     const result = await sendAdminCode()
-    console.log(result)
 
     if (result) {
       // is admin
@@ -76,8 +75,6 @@ const CheckAdmin = () => {
       AlertAdminCodeSetIsOpen(true);
     } else {
       sendAdminCode(admin_code).then(result=>{
-
-        console.log(result);
 
         if(result){
           dispatch(CheckAdminAction(result));

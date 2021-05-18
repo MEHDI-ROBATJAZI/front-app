@@ -2,7 +2,6 @@ import React from "react";
 import {
   Box,
   Text,
-  Button,
   Flex,
   Heading,
   Menu,
@@ -16,8 +15,17 @@ import { TiUserAdd } from "react-icons/ti";
 import {AiFillProfile} from "react-icons/ai"
 import {RiLoginCircleFill} from 'react-icons/ri'
 import Link from "next/link";
+import {TextAnimation1} from '../utils/MyAnimation'
 
 const Header = () => {
+
+  
+  const TitleWebSite = React.useRef(null)
+    
+  React.useEffect(()=>{
+    TextAnimation1(TitleWebSite,50)
+  },[])
+
   return (
     <Box 
       bg="teal"
@@ -38,6 +46,7 @@ const Header = () => {
           fontFamily="Titillium Web"
           color="white"
           lineHeight={3}
+          ref={TitleWebSite}
         >
           my cv app
         </Heading>

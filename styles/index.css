@@ -47,8 +47,20 @@ input{
 }
 .section{
   width:100%;
-  /* position: relative; */
   height:99vh;
+}
+
+#welcome_box span {
+  opacity: 0;
+  transition: all .5s ease;
+}
+
+.anime {
+  opacity: 1;
+}
+.anime2{
+  opacity: 1;
+  transform:translateY(0px)
 }
 
 #welcome_box{
@@ -74,7 +86,8 @@ input{
 }
 .welcome_heading:nth-child(2):hover{
   display: inline;
-  color:white;
+  color:#eeeeee;
+  background-color: gray;
 }
 .welcome_heading:last-of-type:hover{
   display:inline;
@@ -151,6 +164,9 @@ input{
 #personality_heading {
   margin-bottom:100px;
 }
+.header_routes{
+  transition: all .5s ease;
+}
 .header_routes:hover{
   text-decoration: underline;
 }
@@ -171,10 +187,28 @@ input{
 }
 #blob{
   position: absolute;
-  top:140px;
-  right:35%;
-  width:500px;
+  top:-190px;
+  left:-440px;
   z-index:100;
+  opacity:.2
+}
+
+.TitlePage{
+  opacity: 0;
+
+  transition:all .6s ease;
+}
+
+.animateText{
+  opacity: 1;
+}
+
+.ImageBox{
+  opacity:0;
+  transition:all .5s ease;
+  position:relative;
+  right:400px;
+  width:350px;
 }
 
 @media only screen and (max-width: 768px){
@@ -200,11 +234,5 @@ input{
     text-align:center;
     text-indent:10px;
   }
-  #blob{
-    /* position: absolute; */
-    /* top:140px; */
-    /* right:25%; */
-    width:200px;
-    z-index:100;
-  }
+
 }

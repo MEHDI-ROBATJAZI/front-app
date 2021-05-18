@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState,useRef,useEffect} from "react";
 import Head from 'next/head'
 import Header from "../app/Components/header";
 import InputUserController from '../app/Components/InputUserController'
@@ -16,12 +16,22 @@ import {
 
 } from "@chakra-ui/react";
 import {ArrowForwardIcon} from '@chakra-ui/icons'
-const Signup = () => {
+import {TextAnimation1,ImageAnimation} from '../app/utils/MyAnimation'
 
+export default () => {
 
   const [show, setShow] = React.useState(false)
   const handleClick = () => setShow(!show)
+  
+  
+  const TitlePage = useRef(null)
+  const ImageParentElement = useRef(null)
 
+
+  useEffect(()=>{
+    TextAnimation1(TitlePage,50)
+    ImageAnimation(ImageParentElement,500)
+  },[])
 
   return (
     <Box fontFamily="Titillium Web" bg="gray.100" h="100vh">
@@ -36,12 +46,18 @@ const Signup = () => {
         mt={"60px"}
         height="480px"
         border={"1px solid yellow"}
+        overflow="hidden"
       >
-        <Heading textAlign="center" mt={5} fontFamily="Dancing Script">
+        <Heading textAlign="center" mt={5} fontFamily="Dancing Script" ref={TitlePage}>
           Login Page
         </Heading>
         <SimpleGrid columns={2} spacing={1}>
-          <Image src="/assets/login-undraw.svg" boxSize="400px" alt="signup/undraw" />
+          <Box
+            className="ImageBox"
+            ref={ImageParentElement}
+          > 
+            <Image src="/assets/login-undraw.svg" boxSize="400px" alt="signup/undraw" />
+          </Box>
           <Stack spacing={3} mt={"120px"}>
             <Input
               style={{ textIndent: "8px", letterSpacing: "2px" }}
@@ -84,5 +100,3 @@ const Signup = () => {
     </Box>
   );
 };
-
-export default Signup;

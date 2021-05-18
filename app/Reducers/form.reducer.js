@@ -32,8 +32,10 @@ const form_reducer=(state=initialState ,action)=>{
 			
 			if(state.name === "" || state.family === "" || state.email === "" || state.gender===""|| state.passwd===""){
 				state.submit_button_active = false
+				action.payload.ActivingSubmitButton(action.payload.SubmitButtonElement,state.submit_button_active)
 			}else{
 				state.submit_button_active = true
+				action.payload.ActivingSubmitButton(action.payload.SubmitButtonElement,state.submit_button_active)
 			}
 
 			return state
