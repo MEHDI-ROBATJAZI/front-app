@@ -69,7 +69,6 @@ const UsersCount = ()=>{
 			  	<FormLabel>choose you'r goal</FormLabel>
 			  	<Flex>
 				  	<NumberInput
-					  	dir="rtl"
 					  	width="200px">
 				    <NumberInputField 
 				    	ref={InputAdminGoal}

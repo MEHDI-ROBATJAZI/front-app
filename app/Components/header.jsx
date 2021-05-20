@@ -23,14 +23,16 @@ const Header = () => {
   const TitleWebSite = React.useRef(null)
     
   React.useEffect(()=>{
-    TextAnimation1(TitleWebSite,50)
+    setTimeout(()=>{
+      TextAnimation1(TitleWebSite,100)
+    },1000)
   },[])
 
   return (
     <Box 
       bg="teal"
       fontFamily="Titillium Web"
-      w="100%"
+      w="100%" 
      >
       <Flex
         h={45} 
@@ -41,10 +43,10 @@ const Header = () => {
         >
 
         <Heading
-          size={"md"}
-          pt={4}
+          size={"lg"}
+          pt={3}
           fontFamily="Titillium Web"
-          color="white"
+          color="orange"
           lineHeight={3}
           ref={TitleWebSite}
         >

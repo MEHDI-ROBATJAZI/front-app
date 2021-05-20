@@ -12,6 +12,7 @@ const Section1 = () => {
           position="absolute"
           bottom="0"
           right="0"
+          opacity={{sm:".3" , md:".7" , lg:"1"}}
         />
         <Box
           id="welcome_box"

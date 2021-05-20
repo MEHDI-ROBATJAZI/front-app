@@ -13,7 +13,6 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { FiChevronsDown } from "react-icons/fi";
-import RtlProvider from "../../../RTLprovider";
 import { Zoom } from "react-slideshow-image";
 
 const ImageLinks =[
@@ -115,18 +114,6 @@ const Section3 = () => {
                       ))
                     }
 
-                    {/* <Box className="each-slide">
-                      <Image src={imageLinks[0]} />
-                    </Box>
-                    <Box className="each-slide">
-                      <Image src={imageLinks[1]} />
-                    </Box>
-                    <Box className="each-slide">
-                      <Image src={imageLinks[2]} />
-                    </Box>
-                    <Box className="each-slide">
-                      <Image src={imageLinks[3]} />
-                    </Box> */}
                   </Zoom>
                 </Box>
               </AccordionPanel>
@@ -135,7 +122,7 @@ const Section3 = () => {
         </Accordion>
       </Box>
       {/* </RtlProvider> */}
-      <Box id="blob">
+      {/* <Box id="blob">
           <svg
             viewBox="0 0 200 200"
             width="1054px"
@@ -148,7 +135,7 @@ const Section3 = () => {
               transform="translate(100 100)"
             />
           </svg>
-        </Box>
+        </Box> */}
       <Box
         className="iconChevronDown"
         onClick={() => {

@@ -1,4 +1,4 @@
-export function TextAnimation1 (Element , timerAnimation) {
+export function TextAnimation1 (Element , duration) {
   Element = Element.current;
   let TextElement = Element.textContent;
 
@@ -29,14 +29,14 @@ export function TextAnimation1 (Element , timerAnimation) {
 
   let char = 0;
 
-  let MyTimeOut = setInterval(addClassForAnimation, timerAnimation);
+  let MyTimeOut = setInterval(addClassForAnimation, duration);
 }
 
 
-export const ImageAnimation =(imageParentElement , timerAnimation)=>{
+export const ImageAnimation =(imageParentElement , duration)=>{
   setTimeout(()=>{
     imageParentElement.current.style.opacity = 1
     imageParentElement.current.style.right = "-30px"
 
-  },timerAnimation)
+  },duration)
 }

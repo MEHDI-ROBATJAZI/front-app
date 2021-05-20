@@ -17,6 +17,7 @@ import {
   InputLeftElement,
   Divider,
 } from "@chakra-ui/react";
+import RtlProvider from '../../RTLprovider'
 
 const CheckAdmin = () => {
 
@@ -90,6 +91,7 @@ const CheckAdmin = () => {
 
   return (
     <Box>
+      <RtlProvider>
       <AlertDialog
         isOpen={AlertAdminCodeIsOpen}
         onClose={onClose}
@@ -121,6 +123,7 @@ const CheckAdmin = () => {
           </AlertDialogContent>
         </AlertDialogOverlay>
       </AlertDialog>
+      </RtlProvider>
     </Box>
   );
 };
