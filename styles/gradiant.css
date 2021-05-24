@@ -1,0 +1,248 @@
+
+/* copy paste from  "https://bennettfeely.com/gradients/" */
+
+
+.gradiant {
+  background:
+	radial-gradient(
+		circle at left,
+		transparent,
+		#99eb47,
+		#99eb47 3.36927%,
+		transparent 3.36927%,
+		transparent 6.73854%,
+		#b3e87d 6.73854%,
+		#b3e87d 10.10782%,
+		transparent 10.10782%,
+		transparent 13.47709%,
+		#ccebad 13.47709%,
+		#ccebad 16.84636%,
+		transparent 16.84636%,
+		transparent 20.21563%,
+		#a6ed5e 20.21563%,
+		#a6ed5e 23.58491%,
+		transparent 23.58491%,
+		transparent 26.95418%,
+		#ccebad 26.95418%,
+		#ccebad 30.32345%,
+		transparent 30.32345%,
+		transparent 33.69272%,
+		#b3e87d 33.69272%,
+		#b3e87d 37.06199%,
+		transparent 37.06199%,
+		transparent 40.43127%,
+		#99eb47 40.43127%,
+		#99eb47 43.80054%,
+		transparent 43.80054%,
+		transparent 47.16981%
+	),
+	radial-gradient(
+		circle at right,
+		transparent,
+		#99eb47 0%,
+		#99eb47 3.36927%,
+		transparent 3.36927%,
+		transparent 6.73854%,
+		#b3e87d 6.73854%,
+		#b3e87d 10.10782%,
+		transparent 10.10782%,
+		transparent 13.47709%,
+		#ccebad 13.47709%,
+		#ccebad 16.84636%,
+		transparent 16.84636%,
+		transparent 20.21563%,
+		#a6ed5e 20.21563%,
+		#a6ed5e 23.58491%,
+		transparent 23.58491%,
+		transparent 26.95418%,
+		#ccebad 26.95418%,
+		#ccebad 30.32345%,
+		transparent 30.32345%,
+		transparent 33.69272%,
+		#b3e87d 33.69272%,
+		#b3e87d 37.06199%,
+		transparent 37.06199%,
+		transparent 40.43127%,
+		#99eb47 40.43127%,
+		#99eb47 43.80054%,
+		transparent 43.80054%,
+		transparent 47.16981%
+	),
+	radial-gradient(circle at left,
+		transparent,
+		#99eb47 0%,
+		#99eb47 3.36927%,
+		transparent 3.36927%,
+		transparent 6.73854%,
+		#b3e87d 6.73854%,
+		#b3e87d 10.10782%,
+		transparent 10.10782%,
+		transparent 13.47709%,
+		#ccebad 13.47709%,
+		#ccebad 16.84636%,
+		transparent 16.84636%,
+		transparent 20.21563%,
+		#a6ed5e 20.21563%,
+		#a6ed5e 23.58491%,
+		transparent 23.58491%,
+		transparent 26.95418%,
+		#ccebad 26.95418%,
+		#ccebad 30.32345%,
+		transparent 30.32345%,
+		transparent 33.69272%,
+		#b3e87d 33.69272%,
+		#b3e87d 37.06199%,
+		transparent 37.06199%,
+		transparent 40.43127%,
+		#99eb47 40.43127%,
+		#99eb47 43.80054%,
+		transparent 43.80054%,
+		transparent 47.16981%
+	),
+	radial-gradient(circle at right,
+		transparent,
+		#99eb47 0%,
+		#99eb47 3.36927%,
+		transparent 3.36927%,
+		transparent 6.73854%,
+		#b3e87d 6.73854%,
+		#b3e87d 10.10782%,
+		transparent 10.10782%,
+		transparent 13.47709%,
+		#ccebad 13.47709%,
+		#ccebad 16.84636%,
+		transparent 16.84636%,
+		transparent 20.21563%,
+		#a6ed5e 20.21563%,
+		#a6ed5e 23.58491%,
+		transparent 23.58491%,
+		transparent 26.95418%,
+		#ccebad 26.95418%,
+		#ccebad 30.32345%,
+		transparent 30.32345%,
+		transparent 33.69272%,
+		#b3e87d 33.69272%,
+		#b3e87d 37.06199%,
+		transparent 37.06199%,
+		transparent 40.43127%,
+		#99eb47 40.43127%,
+		#99eb47 43.80054%,
+		transparent 43.80054%,
+		transparent 47.16981%
+	), #99e052;
+
+background-size: 4em 4em;
+background-position:
+	0 0,
+	0 2em,
+	2em 0,
+	2em 2em;
+background-blend-mode:
+	overlay,
+	overlay,
+	normal,
+	normal;
+
+
+}
+.gradiant2{
+	background:
+	radial-gradient(
+		circle at bottom left,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		rgb(255, 251, 206) 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top right,
+		transparent 0,
+		transparent 2em,
+		beige 2em,
+		beige 4em,
+		transparent 4em,
+		transparent 6em,
+		khaki 6em,
+		khaki 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at top left,
+		transparent 0,
+		transparent 2em,
+		navajowhite 2em,
+		navajowhite 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	),
+	radial-gradient(
+		circle at bottom right,
+		transparent 0,
+		transparent 2em,
+		palegoldenrod 2em,
+		palegoldenrod 4em,
+		transparent 4em,
+		transparent 6em,
+		peachpuff 6em,
+		peachpuff 8em,
+		transparent 8em,
+		transparent 10em
+	), blanchedalmond;
+	
+background-blend-mode: multiply;
+background-size: 10em 10em;
+background-position: 0 0, 0 0, 5em 5em, 5em 5em;	
+}
+.gradiant3{
+
+	background:
+	repeating-linear-gradient(
+		transparent,
+		transparent 10px,
+		lightcoral 10px,
+		lightcoral 15px,
+		transparent 15px,
+		transparent 20px,
+		lightcoral 15px,
+		lightcoral 40px,
+		transparent 40px,
+		transparent 45px,
+		lightcoral 45px,
+		lightcoral 50px,
+		transparent 50px,
+		transparent 80px
+	),
+	repeating-linear-gradient(
+		90deg,
+		transparent,
+		transparent 10px,
+		lightcoral 10px,
+		lightcoral 15px,
+		transparent 15px,
+		transparent 20px,
+		lightcoral 15px,
+		lightcoral 40px,
+		transparent 40px,
+		transparent 45px,
+		lightcoral 45px,
+		lightcoral 50px,
+		transparent 50px,
+		transparent 80px
+	), floralwhite;
+
+background-blend-mode: multiply;
+}
+.Blur{
+	filter:blur(4px)
+}

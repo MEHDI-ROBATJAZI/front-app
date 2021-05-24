@@ -6,11 +6,7 @@ import Section1 from "../app/Components/IndexPage/section1";
 import Section2 from "../app/Components/IndexPage/section2";
 import Section3 from "../app/Components/IndexPage/section3";
 
-
 import {Box} from "@chakra-ui/react";
-
-
-
 
 const Home = () => {
 
@@ -25,11 +21,9 @@ const Home = () => {
 
       <Section1 />
 
-      {/* ////////////////////////////// ////////////////////*/}
 
       <Section2 />
 
-      {/* //////////////////////////////////////////////// */}
       
       <Section3 />
 

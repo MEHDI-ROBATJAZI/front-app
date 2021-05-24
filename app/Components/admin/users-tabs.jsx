@@ -19,9 +19,6 @@ import {
 import axios from "axios";
 
 
-
-
-
 const UserTable = (props) => {
   return (
     <Table variant="striped" colorScheme="teal">

@@ -1,0 +1,8 @@
+.TaskBox{
+  line-height:60px;
+}
+
+.TaskBox:hover{
+  background-color: aliceblue;
+  
+}

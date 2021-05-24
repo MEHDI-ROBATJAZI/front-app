@@ -5,7 +5,9 @@ import { useStore } from '../store'
 import "../styles/index.css"
 import "../styles/admin-page.css"
 import "../styles/sliderStyle.css"
+import "../styles/gradiant.css"
 
+import "../app/Components/tasks/taskList.css"
 // import "../public/fonts/B_Nazanin.ttf"
 
 // 2. Update the breakpoints as key-value pairs

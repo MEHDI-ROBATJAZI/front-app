@@ -5,18 +5,17 @@ import { FiChevronsDown } from "react-icons/fi";
 
 const Section1 = () => {
   return (
-    <Box className="section" bg="#a2ff91" position="relative">
+    <Box  className="section gradiant" /*  bg="#a2ff91"  */ position="relative">
         <Image
           src="/assets/me.png"
           width="400px"
           position="absolute"
           bottom="0"
           right="0"
-          opacity={{sm:".3" , md:".7" , lg:"1"}}
+          opacity={{sm:".1" , md:".5" , lg:"1"}}
         />
         <Box
           id="welcome_box"
-          // ref={welcomeElement}
         >
           <Heading
             className="welcome_heading"

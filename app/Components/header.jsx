@@ -57,9 +57,10 @@ const Header = () => {
 
 
 
-          <Text color="orange" mr={"20px"} mt={"11px"} className="header_routes" >
+          <Text color="orange" mr={"20px"} mt={"11px"} className="header_routes" m="auto">
             <Link href="/">Home</Link>
           </Text>
+
 
 
           <Menu>
@@ -78,6 +79,11 @@ const Header = () => {
               </MenuItem>
             </MenuList>
           </Menu>
+
+
+          <Text color="orange" mr={"20px"} mt={"11px"} className="header_routes"  m="auto" >
+            <Link href="/todo">Todo</Link>
+          </Text>
       </Flex>
     </Box>
   );
