@@ -7,13 +7,13 @@ export const Change_Input_Data=(formname,tagname,data,ActivingSubmitButton,Submi
 	}
 }
 
+
 export const CheckAdminAction=(isAdmin)=>{
 	return {
 		type:"IS_ADMIN",
 		payload:isAdmin
 	}
 }
-
 
 export const addTodo =(newTodo)=>{
 	return{
@@ -34,9 +34,9 @@ export const isDoneTodo=(id)=>{
 	}
 }
 
-export const addRome=(newRome)=>{
+export const addRome=(newRomeId)=>{
 	return{
 		type:"ADD_ROME",
-		payload:newRome
+		payload:newRomeId
 	}	
 }
