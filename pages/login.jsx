@@ -1,7 +1,6 @@
 import React,{useState,useRef,useEffect} from "react";
 import Head from 'next/head'
 import Header from "../app/Components/header";
-import InputUserController from '../app/Components/InputUserController'
 import {
   Box,
   Container,
@@ -96,7 +95,6 @@ export default () => {
           </Stack>
         </SimpleGrid>
       </Container>
-      <InputUserController />
     </Box>
   );
 };

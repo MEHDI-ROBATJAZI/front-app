@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import Head from "next/head";
 import Header from "../app/Components/header";
-import InputUserController from "../app/Components/InputUserController";
 import {
   Box,
   Container,
@@ -18,40 +17,70 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { AddIcon } from "@chakra-ui/icons";
-import { connect } from "react-redux";
-import { Change_Input_Data } from "../app/Actions/actions.js";
-import { useSelector } from "react-redux";
 import axios from "axios";
 import { TextAnimation1 , ImageAnimation} from "../app/utils/MyAnimation";
+import {useForm} from "react-hook-form"
+import {UserInformation} from '../app/Actions/actions'
+import { useDispatch } from "react-redux";
+import {useRouter} from "next/router"
 
-const ToggleActivingSubmitButton = (SubmitButtonElement, result) => {
-  if (result) {
-    SubmitButtonElement.current.disabled = !result;
-  } else {
-    SubmitButtonElement.current.disabled = !result;
-  }
-};
 
-const Signup = (props) => {
+const ErrorStyles = {
+  color:"#ff6a6a",
+  backgroundColor:"black",
+  fontSize:"14px",
+  fontFamily:"Architects Daughter",
+  letterSpacing:"1px",
+}
 
+
+
+const Signup = () => {
+  const {register, setValue ,handleSubmit , formState:{errors}} = useForm()
   const SubmitButtonElement = useRef(null);
-
+  
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
-  // const formData = useSelector((state) => state.form_data);
+  
+  const MaleRadioButton = useRef(null)
+  const FemaleRadioButton = useRef(null)
+  
+  const dispatch = useDispatch()
+  const router = useRouter()
+  // submit form function
+  const SUBMIT = async (data)=> {
+    if(gender===""){
+      alert("please choose your gender")
+      return
+    }
+    data.gender = gender
+    
+    try{
+      const response =  await axios.post("http://localhost:5000/signup", data)
+      if(response.status===200){
 
-  function SUBMIT () {
-
-
-    console.log("alert")
-    // const resp = await axios.post("http://localhost:5000/signup", formData);
-    // if (resp.status == 200) {
-    //   window.location.href = "/";
-    // } else if (resp.status === 400) {
-    //   alert(resp.msg);
-    // }
+        dispatch(UserInformation(data))
+        // window.history.back()
+        router.push("/")
+        // history.pushState(null, null, '/');
+        // console.log(window.history)
+      }
+    }catch(error){
+      console.log(error);
+      alert("your request failed , something went wrong and Please Try Again ")
+    }finally{
+      // Errasing All Inputs Into Signup Page
+      setValue("firstName","",{shouldValidate:false})
+      setValue("lastName","",{shouldValidate:false})
+      setValue("email","",{shouldValidate:false})
+      setValue("passwd","",{shouldValidate:false})
+      setGender('')
+      MaleRadioButton.current.removeAttribute("checked")
+      FemaleRadioButton.current.removeAttribute("checked")
+    }
   };
 
+  // Animation
   const Title = useRef(null);
   const ImageParentElement = useRef(null)
 
@@ -59,7 +88,12 @@ const Signup = (props) => {
     TextAnimation1(Title, 50);
     ImageAnimation(ImageParentElement,500)
   }, []);
+  
 
+  // set gender user in radio button
+  const [gender,setGender] = useState("")
+
+  
   return (
     <Box fontFamily="Titillium Web" bg="gray.100" h="100vh">
       <Head>
@@ -71,7 +105,7 @@ const Signup = (props) => {
         bgGradient="linear(to-l, #af5eff, #ff57ab)"
         maxW="960px"
         mt={"60px"}
-        height="480px"
+        minHeight="480px"
         border={"1px solid yellow"}
         overflow="hidden"
       >
@@ -83,6 +117,7 @@ const Signup = (props) => {
         >
           Register Page
         </Heading>
+
         <SimpleGrid columns={2} spacing={1}>
           <Box
               className="ImageBox"
@@ -92,43 +127,38 @@ const Signup = (props) => {
               src="/assets/signup-undraw.svg"
               boxSize="350px"
               alt="signup/undraw"
-
-             
             />
           </Box>
-          <Stack spacing={3} mt={"60px"} p={4}>
+          <Stack spacing={3} mt={"20px"} p={4}>
             <Flex>
               <Input
                 variant="flushed"
-                name="name"
                 placeholder="name"
-                onChange={(e) => props.ChangeInput(e, SubmitButtonElement)}
+                {...register("firstName",{required:true , minLength:2 , maxLength:20})}
               />
               <Input
                 variant="flushed"
-                name="family"
                 placeholder="family"
-                onChange={(e) => props.ChangeInput(e, SubmitButtonElement)}
+                {...register("lastName",{required:true , minLength:2 , maxLength:20})}
               />
             </Flex>
-
+            {errors.firstName && <Box style={ErrorStyles}>please write firstname between 2 and 20 charachters</Box>}
+            {errors.lastName && <Box style={ErrorStyles}>please write lastname between 2 and 20 charachters</Box>}
             <Input
               style={{ textIndent: "8px", letterSpacing: "2px" }}
               size="md"
               mb={5}
               placeholder="email"
-              name="email"
               focusBorderColor="blue.300"
-              onChange={(e) => props.ChangeInput(e, SubmitButtonElement)}
+              {...register("email",{required:true,pattern:/^(.+)@(.+)$/i})}
             />
-
+            {errors.email && <Box style={ErrorStyles}>please write a correct email , email is required </Box>}
             <InputGroup size="md">
               <Input
                 pr="4.5rem"
                 type={show ? "text" : "password"}
                 placeholder="Enter password"
-                name="password"
-                onChange={(e) => props.ChangeInput(e, SubmitButtonElement)}
+                {...register("passwd" , {required:true,minLength:6,maxLength:30})}
               />
               <InputRightElement width="4.5rem">
                 <Button h="1.75rem" size="sm" onClick={handleClick}>
@@ -136,22 +166,23 @@ const Signup = (props) => {
                 </Button>
               </InputRightElement>
             </InputGroup>
+            {errors.passwd && <Box style={ErrorStyles}>your password length should be between 6 and 30 characters and password is required</Box>}
 
-            <RadioGroup defaultValue="2">
-              <Stack spacing={5} direction="row">
+            <RadioGroup value={gender} onChange={setGender}>
+              <Stack spacing={5} direction="row" >
+
                 <Radio
                   colorScheme="red"
                   value="male"
-                  name="gender"
-                  onChange={(e) => props.ChangeInput(e, SubmitButtonElement)}
+                  ref={MaleRadioButton}
                 >
                   male
                 </Radio>
                 <Radio
-                  colorScheme="green"
                   value="female"
-                  name="gender"
-                  onChange={(e) => props.ChangeInput(e, SubmitButtonElement)}
+                  colorScheme="green"
+                  ref={FemaleRadioButton}
+
                 >
                   female
                 </Radio>
@@ -163,40 +194,17 @@ const Signup = (props) => {
               size="lg"
               bg="#deda3c"
               leftIcon={<AddIcon w={4} />}
-              isDisabled={true}
-              onClick={SUBMIT}
+              onClick={handleSubmit(SUBMIT)}
             >
               Signup now
             </Button>
           </Stack>
         </SimpleGrid>
       </Container>
-      <InputUserController />
     </Box>
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    ChangeInput: (event, SubmitButtonElement) => {
-      let tagname = event.target.name;
-      let value = event.target.value;
-      const form_name = "signup";
-      dispatch(
-        Change_Input_Data(
-          form_name,
-          tagname,
-          value,
-          ToggleActivingSubmitButton,
-          SubmitButtonElement
-        )
-      );
-    },
-  };
-};
 
-const mapStateToProps = (state) => {
-  return state.submit_button_active;
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Signup);
+export default Signup

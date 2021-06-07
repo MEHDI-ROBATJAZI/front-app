@@ -2,7 +2,7 @@ import * as types from "../Actions/types";
 
 
 
-const AdminReducer =(state=false,action)=>{
+const adminReducer =(state=false,action)=>{
   switch(action.type){
     case types.IS_ADMIN:
       return state = action.payload
@@ -11,4 +11,4 @@ const AdminReducer =(state=false,action)=>{
   }
 }
 
-export default AdminReducer
+export default adminReducer

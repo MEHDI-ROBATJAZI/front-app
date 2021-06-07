@@ -1,12 +1,9 @@
-export const Change_Input_Data=(formname,tagname,data,ActivingSubmitButton,SubmitButtonElement)=>{
-	return {
-		type:"CHANGE_INPUT",
-		payload:{
-			formname,tagname,data,ActivingSubmitButton,SubmitButtonElement
-		}
+export const UserInformation = (information) =>{
+	return{
+		type:"USER_REGISTER",
+		payload:information
 	}
 }
-
 
 export const CheckAdminAction=(isAdmin)=>{
 	return {

@@ -19,21 +19,18 @@ const Section1 = () => {
         >
           <Heading
             className="welcome_heading"
-            fontFamily="Big Shoulders Display"
             fontSize={{ base: "3em", sm: "4em", md: "5em", lg: "6em" }}
           >
             Mahdi Robatjazi
           </Heading>
           <Heading
             className="welcome_heading"
-            fontFamily="Big Shoulders Display"
             fontSize={{ base: "3em", sm: "4em", md: "5em", lg: "6em" }}
           >
             Software Engineer
           </Heading>
           <Heading
             className="welcome_heading"
-            fontFamily="Big Shoulders Display"
             fontSize={{ base: "3em", sm: "4em", md: "5em", lg: "6em" }}
           >
             Web Developer
