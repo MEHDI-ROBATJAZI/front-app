@@ -1,0 +1,14 @@
+#paper-box{
+    width:120px;
+    height:230px;
+    background-color: white;
+    border:1px solid gray;
+}
+.TaskBox{
+    line-height:60px;
+  }
+  
+  .TaskBox:hover{
+    background-color: aliceblue;
+    
+  }

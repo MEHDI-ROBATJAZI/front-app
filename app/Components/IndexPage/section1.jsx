@@ -5,10 +5,10 @@ import { FiChevronsDown } from "react-icons/fi";
 
 const Section1 = () => {
   return (
-    <Box  className="section gradiant" /*  bg="#a2ff91"  */ position="relative">
+    <Box className="section gradiant" /*  bg="#a2ff91"  */ position="relative">
         <Image
           src="/assets/me.png"
-          width="400px"
+          width="350px"
           position="absolute"
           bottom="0"
           right="0"
@@ -19,19 +19,19 @@ const Section1 = () => {
         >
           <Heading
             className="welcome_heading"
-            fontSize={{ base: "3em", sm: "4em", md: "5em", lg: "6em" }}
+            fontSize={{ base: "2em", sm: "3em", md: "4em", lg: "5em" }}
           >
             Mahdi Robatjazi
           </Heading>
           <Heading
             className="welcome_heading"
-            fontSize={{ base: "3em", sm: "4em", md: "5em", lg: "6em" }}
+            fontSize={{ base: "2em", sm: "3em", md: "4em", lg: "5em" }}
           >
             Software Engineer
           </Heading>
           <Heading
             className="welcome_heading"
-            fontSize={{ base: "3em", sm: "4em", md: "5em", lg: "6em" }}
+            fontSize={{ base: "2em", sm: "3em", md: "4em", lg: "5em" }}
           >
             Web Developer
           </Heading>
@@ -50,7 +50,7 @@ const Section1 = () => {
         </Box>
         <Box
           className="iconChevronDown"
-          onClick={() => window.scrollTo({top:840 ,behavior:'smooth'} )}
+          onClick={() => window.scrollTo({top:800 ,behavior:'smooth'} )}
         >
           <FiChevronsDown fontSize="42px" />
         </Box>

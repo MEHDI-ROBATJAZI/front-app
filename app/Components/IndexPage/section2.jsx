@@ -71,7 +71,7 @@ const Section2 = () => {
       </Box>
       <Box
         className="iconChevronDown"
-        onClick={() => window.scrollTo({ top: 1640, behavior: 'smooth' })}
+        onClick={() => window.scrollTo({ top: 1550, behavior: 'smooth' })}
       >
         <FiChevronsDown fontSize="42px" />
       </Box>

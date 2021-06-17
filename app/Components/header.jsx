@@ -33,7 +33,7 @@ const Header = () => {
       bg="teal"
       fontFamily="Titillium Web"
       w="100%" 
-     >
+    >
       <Flex
         h={45} 
         p={{base:"0 50px 0 50px",
@@ -55,13 +55,9 @@ const Header = () => {
 
         <Spacer />
 
-
-
           <Text color="orange" mr={"20px"} mt={"11px"} className="header_routes" m="auto">
             <Link href="/">Home</Link>
           </Text>
-
-
 
           <Menu>
             <MenuButton color="orange"  m={"20px"} className="header_routes">

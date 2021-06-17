@@ -244,5 +244,5 @@ background-position: 0 0, 0 0, 5em 5em, 5em 5em;
 background-blend-mode: multiply;
 }
 .Blur{
-	filter:blur(4px)
+	filter:blur(15px)
 }

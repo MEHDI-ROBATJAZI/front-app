@@ -38,5 +38,10 @@ export const initializeStore = (preloadedState) => {
 
 export function useStore(initialState) {
   const store = useMemo(() => initializeStore(initialState), [initialState])
+  
+  
+  store.subscribe(()=>{
+    console.log(`store changed` , store.getState());
+  })
   return store
 }

@@ -47,8 +47,8 @@ input{
 }
 .section{
   width:100%;
-  min-height:99vh;
-  
+  min-height:95vh;
+  position: relative;
 }
 
 #welcome_box{
@@ -141,10 +141,6 @@ input{
   /* width:900px; */
   padding:10px;
   /* margin-left:0; */
-}
-.section{
-  position: relative;
-  height:99vh;
 }
 #personality_container{
   z-index:1000;
