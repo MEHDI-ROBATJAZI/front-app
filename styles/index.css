@@ -169,14 +169,49 @@ input{
   left:0;
   z-index:100;
 }
-#blob{
+.blob{
   position: absolute;
-  top:-190px;
-  left:-440px;
+  top:0;
+  left:0;
   z-index:100;
-  opacity:.2
+  opacity:.2;
 }
+.svgBlob{
+  animation:rotateBlobAnimation 3s linear infinite;
+}
+#blob1{ 
+  animation:moveBlobAnimation 11s linear infinite;
+  top:100px;
 
+}
+#blob2{
+  animation:moveBlobAnimation 15s linear infinite;
+  top:300px;
+
+}
+#blob3{
+  animation:moveBlobAnimation 10s linear infinite;
+  top:500px;
+  opacity:.3;
+} 
+@keyframes rotateBlobAnimation {
+  from{
+    transform:rotate(0);
+  }
+  to{
+    transform:rotate(360deg);
+  }
+}
+@keyframes moveBlobAnimation {
+  from{
+    left:0
+    
+  }
+  to{
+    left : 1250px;
+
+  }
+}
 .TitlePage{
   opacity: 0;
 

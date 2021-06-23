@@ -43,7 +43,7 @@ const Footer =()=>{
   }
 
 	return(
-		<Box className="gradiant2" pt={5}>
+		<Box id="footer" className="gradiant2" pt={5}>
       
       <VStack spacing={"14px"}>
     			<Image
