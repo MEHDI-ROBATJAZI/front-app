@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box ,Text, Heading, Image } from '@chakra-ui/react'
 import { FiChevronsDown } from "react-icons/fi";
-
+import calculateSectionsHeight from "../../utils/calculateSectionsHeight"
 
 const Section1 = () => {
   return (
@@ -50,7 +50,8 @@ const Section1 = () => {
         </Box>
         <Box
           className="iconChevronDown"
-          onClick={() => window.scrollTo({top:800 ,behavior:'smooth'} )}
+          // onClick={() => window.scrollTo({top:800 ,behavior:'smooth'} )}
+          onClick={()=>calculateSectionsHeight(1)}
         >
           <FiChevronsDown fontSize="42px" />
         </Box>

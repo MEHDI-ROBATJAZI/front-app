@@ -32,7 +32,8 @@ const Header = () => {
     <Box 
       bg="teal"
       fontFamily="Titillium Web"
-      w="100%" 
+      w="100%"
+      id="header" 
     >
       <Flex
         h={45} 
