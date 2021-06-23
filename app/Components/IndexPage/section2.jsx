@@ -60,8 +60,7 @@ const Section2 = () => {
       </Box>
       <Box
         className="iconChevronDown"
-        onClick={() => calculateSectionsHeight(2)}
-        // onClick={() => window.scrollTo({ top: 1550, behavior: 'smooth' })}
+        onClick={()=>calculateSectionsHeight(2)}
       >
         <FiChevronsDown fontSize="42px" />
       </Box>

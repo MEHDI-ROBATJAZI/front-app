@@ -6,6 +6,7 @@ export default function calculateSectionsHeight( n ){
   const section2 = allSections[1].clientHeight
   const section3 = allSections[2].clientHeight
   // const footer = document.getElementById('footer').clientHeight
+  const footer = document.getElementById('footer').clientHeight
   
   
   switch(n){
