@@ -1,4 +1,4 @@
-import React,{useRef} from 'react'
+import React,{useRef,useEffect,useState} from 'react'
 import {
 	Box,
 	Image,
@@ -8,9 +8,31 @@ import {
 }
 from "@chakra-ui/react"
 
+const waveColors = [
+  "#ffac6c",
+  "#8cff6c",
+  "#ff6190",
+  "#bd6cff",
+  "#6cf0ff",
+  "#7363ff"
+]
 
+const changeWaveColor = ()=>{
+  let index = 0;
+  index = Math.floor(Math.random()* (5-0+1))+0
+  console.log(index)
+  return waveColors[index]
+}
 
 const Footer =()=>{
+const [waveColor,setWaveColor] = useState("#ffff61")
+
+useEffect(()=>{
+  setInterval(()=>{
+    setWaveColor(changeWaveColor)
+  },5000)
+
+},[])
 
   const instagramImageElement = useRef(null)
   const githubImageElement = useRef(null)
@@ -105,7 +127,12 @@ const Footer =()=>{
         zIndex="1000"
       />
       <svg id="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#ffac6c" fillOpacity="1" d="M0,96L30,85.3C60,75,120,53,180,69.3C240,85,300,139,360,176C420,213,480,235,540,218.7C600,203,660,149,720,133.3C780,117,840,139,900,170.7C960,203,1020,245,1080,234.7C1140,224,1200,160,1260,149.3C1320,139,1380,181,1410,202.7L1440,224L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
+        <path 
+        fill={
+          waveColor
+        } 
+        fillOpacity="1" 
+        d="M0,96L30,85.3C60,75,120,53,180,69.3C240,85,300,139,360,176C420,213,480,235,540,218.7C600,203,660,149,720,133.3C780,117,840,139,900,170.7C960,203,1020,245,1080,234.7C1140,224,1200,160,1260,149.3C1320,139,1380,181,1410,202.7L1440,224L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
       </svg>
 		</Box>
 	)		

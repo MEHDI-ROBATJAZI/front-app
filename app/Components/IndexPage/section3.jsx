@@ -31,6 +31,7 @@ import calculateSectionsHeight from "../../utils/calculateSectionsHeight";
 const Section3 = () => {
   return (
     <Box
+      style={{overflow:"hidden"}}
       className="section"
       position="relative"
       bgGradient="linear(to-tr,#fabb3e,#ff413b)"

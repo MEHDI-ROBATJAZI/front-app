@@ -4,37 +4,29 @@ import { FiChevronsDown } from "react-icons/fi";
 import calculateSectionsHeight from "../../utils/calculateSectionsHeight"
 const Section2 = () => {
   return (
-    <Box
-      className="section"
-      bgGradient="radial(white,#a1a1a1)"
-    // position="relative"
-    >
-      <Box
-      // id="skills_container"
-      // position="absolute"
-      // left="300px"
-      // top="120px"
-      >
+    <Box className="section" bgGradient="radial(white,#a1a1a1)">
+      <Box>
         <Tooltip
           label="These items are honest please trust me"
           aria-label="A tooltip"
         >
-          <Heading
-            size="lg"
-            border="1px solid yellow"
-            className="section_box"
-          >
+          <Heading size="lg" border="1px solid yellow" className="section_box">
             SKILLS_💪
           </Heading>
         </Tooltip>
         <UnorderedList
           id="skills_list"
-          w={{ base: "300px", sm: "430px", md: "700px", lg: "1000px" }}
-          fontSize={{ base: "1em", sm: "1.5em", md: "1.7em", lg: "2em" }}
+          w={{ base: "300px", sm: "430px", md: "700px", lg: "900px" }}
+          fontSize={{ base: "1em", sm: "1.2em", md: "1.5em", lg: "1.7em" }}
+          m="auto"
         >
           <ListItem>
             javascirpt / es6 and higher /nodejs /react / redux{" "}
             <Badge colorScheme="teal">fluent</Badge>
+          </ListItem>
+          <ListItem>
+            css framework : sass / styled-component / styled-system
+            <Badge colorScheme="green">good</Badge>
           </ListItem>
           <ListItem>
             design : bootstrap / chakra-ui / semantic-ui
@@ -58,10 +50,7 @@ const Section2 = () => {
           </ListItem>
           <ListItem>
             understanding english
-            <Badge colorScheme="cyan">
-              {" "}
-              medium level and i working on it
-            </Badge>
+            <Badge colorScheme="cyan"> medium level and i working on it</Badge>
           </ListItem>
           <ListItem>
             linux . strapi . and etc ...
@@ -71,13 +60,13 @@ const Section2 = () => {
       </Box>
       <Box
         className="iconChevronDown"
-        onClick={()=>calculateSectionsHeight(2)}
+        onClick={() => calculateSectionsHeight(2)}
         // onClick={() => window.scrollTo({ top: 1550, behavior: 'smooth' })}
       >
         <FiChevronsDown fontSize="42px" />
       </Box>
     </Box>
-  )
+  );
 }
 
 export default Section2
